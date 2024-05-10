@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D802D0902BEE4646003C910F /* StationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D802D08F2BEE4646003C910F /* StationResponseModel.swift */; };
+		D802D0922BEE6184003C910F /* StationArrivalDataResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D802D0912BEE6184003C910F /* StationArrivalDataResponseModel.swift */; };
 		D8ABCBA92BEA569A00A97FDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABCBA82BEA569A00A97FDC /* AppDelegate.swift */; };
 		D8ABCBAB2BEA569A00A97FDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABCBAA2BEA569A00A97FDC /* SceneDelegate.swift */; };
 		D8ABCBAD2BEA569A00A97FDC /* StationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ABCBAC2BEA569A00A97FDC /* StationSearchViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D802D08F2BEE4646003C910F /* StationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResponseModel.swift; sourceTree = "<group>"; };
+		D802D0912BEE6184003C910F /* StationArrivalDataResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationArrivalDataResponseModel.swift; sourceTree = "<group>"; };
 		D8ABCBA52BEA569A00A97FDC /* FaUpIn03SubwayStation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaUpIn03SubwayStation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8ABCBA82BEA569A00A97FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8ABCBAA2BEA569A00A97FDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 			children = (
 				D8ABCBA82BEA569A00A97FDC /* AppDelegate.swift */,
 				D8ABCBAA2BEA569A00A97FDC /* SceneDelegate.swift */,
+				D802D08F2BEE4646003C910F /* StationResponseModel.swift */,
+				D802D0912BEE6184003C910F /* StationArrivalDataResponseModel.swift */,
 				D8D832512BECE14E002193A4 /* Scenes */,
 				D8ABCBB12BEA569E00A97FDC /* Assets.xcassets */,
 				D8ABCBB32BEA569E00A97FDC /* LaunchScreen.storyboard */,
@@ -167,7 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D832532BECE17B002193A4 /* StationDetailViewController.swift in Sources */,
+				D802D0902BEE4646003C910F /* StationResponseModel.swift in Sources */,
 				D8ABCBAD2BEA569A00A97FDC /* StationSearchViewController.swift in Sources */,
+				D802D0922BEE6184003C910F /* StationArrivalDataResponseModel.swift in Sources */,
 				D8ABCBA92BEA569A00A97FDC /* AppDelegate.swift in Sources */,
 				D8D832552BECF310002193A4 /* StationDetailCollectionViewCell.swift in Sources */,
 				D8ABCBAB2BEA569A00A97FDC /* SceneDelegate.swift in Sources */,

@@ -10,7 +10,7 @@ import SnapKit
 import Alamofire
 
 class StationSearchViewController: UIViewController {
-    private var numberOfCell: Int = 0
+    private var stations: [Station] = []
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -25,8 +25,6 @@ class StationSearchViewController: UIViewController {
         
         setNavigationItems()
         setTableViewLayout()
-        
-        requestStationName()
     }
     
     private func setNavigationItems() {
@@ -46,14 +44,16 @@ class StationSearchViewController: UIViewController {
         tableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
-    private func requestStationName() {
-        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/서울역"
+    private func requestStationName(from stationName: String) {
+        let urlString = "http://openapi.seoul.go.kr:8088/sample/json/SearchInfoBySubwayNameService/1/5/\(stationName)"
         let urlEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         AF.request(urlEncoded ?? "")
-            .responseDecodable(of: StationResponseModel.self) { response in
-                guard case .success(let data) = response.result else { return }
-                print(data.stations)
+            .responseDecodable(of: StationResponseModel.self) { [weak self] response in
+                guard let self = self,
+                      case .success(let data) = response.result else { return }
+                self.stations = data.stations
+                self.tableView.reloadData()
             }
             .resume()
     }
@@ -61,14 +61,17 @@ class StationSearchViewController: UIViewController {
 
 extension StationSearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        numberOfCell = 10
         tableView.reloadData()
         tableView.isHidden = false
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        numberOfCell = 0
         tableView.isHidden = true
+        stations = []
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        requestStationName(from: searchText)
     }
 }
 
@@ -81,12 +84,14 @@ extension StationSearchViewController: UITableViewDelegate {
 
 extension StationSearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfCell
+        return stations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "\(indexPath.item)"
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        let station = stations[indexPath.item]
+        cell.textLabel?.text = station.stationName
+        cell.detailTextLabel?.text = station.lineNumber
         return cell
     }
 }

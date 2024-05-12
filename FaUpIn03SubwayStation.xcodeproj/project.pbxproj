@@ -16,7 +16,7 @@
 		D8ABCBB52BEA569E00A97FDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8ABCBB32BEA569E00A97FDC /* LaunchScreen.storyboard */; };
 		D8ABCBBE2BEA57A000A97FDC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D8ABCBBD2BEA57A000A97FDC /* SnapKit */; };
 		D8ABCBC02BEA57A000A97FDC /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D8ABCBBF2BEA57A000A97FDC /* SnapKit-Dynamic */; };
-		D8ABCBC32BEA585100A97FDC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D8ABCBC22BEA585100A97FDC /* Alamofire */; };
+		D8ABCBC32BEA585100A97FDC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D8ABCBC22BEA585100A97FDC /* Alamofire */; settings = {ATTRIBUTES = (Required, ); }; };
 		D8ABCBC52BEA585100A97FDC /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D8ABCBC42BEA585100A97FDC /* AlamofireDynamic */; };
 		D8D832532BECE17B002193A4 /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D832522BECE17B002193A4 /* StationDetailViewController.swift */; };
 		D8D832552BECF310002193A4 /* StationDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D832542BECF30F002193A4 /* StationDetailCollectionViewCell.swift */; };
